@@ -48,10 +48,12 @@ module.exports = [
 const clean = require('gulp-clean');
 
 module.exports = function (gulp) {
-  gulp.clean('dist', { read: false })
+  return gulp.clean('dist', { read: false })
     .pipe(clean());
 };
 ```
+
+As you can see above, `gulp-import-tasks` will automatically send `gulp` as the first function parameter. You can add additional parameters using [advanced options][section_advanced].
 
 
 #### Custom Directory
@@ -64,7 +66,7 @@ You can customize the tasks directory by passing in the name of your custom dire
 require('gulp-import-tasks')('gulp/tasks');
 ```
 
-Or, you can define it by passing in an options object instead. See [advanced usage](#advanced).
+Or, you can define it by passing in an options object instead. See [advanced usage][section_advanced].
 
 ```js
 // gulpfile.js
@@ -78,18 +80,18 @@ require('gulp-import-tasks')({
 Advanced
 --------
 
-Using the options parameter, you may specify permisible file extensions, as well as any additional function parameters.
+Using the options parameter, you may specify permissible file extensions, as well as any additional function parameters.
 
 #### Options
 
-| Option       | Type             | Default   |
-|:-------------|:-----------------|:----------|
-| `dir`        | `string`         | `tasks`   |
-| `extensions` | `Array.<string>` | `['.js']` |
-| `params`     | `Array.<any>`    | `[]`      |
+| Option       | Type             | Description                                                          | Default   |
+|:-------------|:-----------------|:---------------------------------------------------------------------|:----------|
+| `dir`        | `string`         | The directory that contains your gulp tasks.                         | `tasks`   |
+| `extensions` | `Array.<string>` | Only load files from the tasks directory that have these extensions. | `['.js']` |
+| `params`     | `Array.<any>`    | Additional parameters to pass into imported task.                    | `[]`      |
 
 
-#### Usage
+#### Example
 
 ```js
 // gulpfile.js
@@ -108,12 +110,20 @@ require('gulp-import-tasks')({
 ```
 
 ```js
-// tasks/clean.js
+// gulp/tasks/default.js
+
+module.exports = [
+  'clean'
+];
+```
+
+```js
+// gulp/tasks/clean.js
 
 const clean = require('gulp-clean');
 
 module.exports = function (gulp, config) {
-  gulp.clean(config.build, { read: false })
+  return gulp.clean(config.build, { read: false })
     .pipe(clean());
 };
 ```
@@ -132,6 +142,10 @@ MIT
 
 
 [Nathan Buchar]: mailto:hello@nathanbuchar.com
+
+[section_install]: #install
+[section_usage]: #usage
+[section_advanced]: #advanced
 
 [external_gulp-load-tasks]: https://npmjs.com/package/gulp-load-tasks
 [external_gulp]: https://npmjs.com/package/gulp
