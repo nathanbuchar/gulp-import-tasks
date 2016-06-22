@@ -13,6 +13,13 @@
     "load"
   ],
   "author": "Nathan Buchar <hello@nathanbuchar.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanbuchar/gulp-import-tasks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nathanbuchar/gulp-import-tasks/issues"
+  },
   "license": "MIT",
   "peerDependencies": {
     "gulp": "*"
