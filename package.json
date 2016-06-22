@@ -1,6 +1,6 @@
 {
   "name": "gulp-import-tasks",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Import tasks from a local directory, rather than from your gulpfile.",
   "main": "index.js",
   "scripts": {
