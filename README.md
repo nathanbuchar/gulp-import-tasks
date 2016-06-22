@@ -3,6 +3,8 @@ gulp-import-tasks
 
 Imports gulp tasks from a local directory, rather than from your gulpfile.
 
+Based on [gulp-load-tasks][external_gulp-load-tasks], but better (and actively maintained)!
+
 
 
 ***
@@ -16,13 +18,15 @@ Install
 $ npm install gulp-import-tasks
 ```
 
-<small>**Note:** [`gulp`][gulp] is a required peer dependency.</small>
+<small>**Note:** [`gulp`][external_gulp] is a required peer dependency.</small>
 
 
 Usage
 -----------
 
-Simply require the package within your `gulpfile.js`.
+#### Quick Start
+
+Simply require the package within your `gulpfile.js`. By default, this will load all gulp tasks that exist within a local `tasks` directory.
 
 ```js
 // gulpfile.js
@@ -48,8 +52,6 @@ module.exports = function (gulp) {
     .pipe(clean());
 };
 ```
-
-By default, this will load all gulp tasks within a local `tasks` directory.
 
 
 #### Custom Directory
@@ -130,4 +132,6 @@ MIT
 
 
 [Nathan Buchar]: mailto:hello@nathanbuchar.com
-[gulp]: https://npmjs.com/package/gulp
+
+[external_gulp-load-tasks]: https://npmjs.com/package/gulp-load-tasks
+[external_gulp]: https://npmjs.com/package/gulp
