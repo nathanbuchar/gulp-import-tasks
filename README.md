@@ -13,7 +13,7 @@ Install
 -------
 
 ```
-$ npm install import-gulp-tasks
+$ npm install gulp-import-tasks
 ```
 
 <small>**Note:** [`gulp`][gulp] is a required peer dependency.</small>
