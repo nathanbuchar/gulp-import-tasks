@@ -100,7 +100,7 @@ function loadTasks(options) {
     let taskName = path.basename(file, extension);
     let taskObject;
 
-    if (!Array.isArray(task)) {
+    if (Array.isArray(task)) {
       taskObject = task;
     } else {
       taskObject = task.bind.apply(task, [task, gulp].concat(opts.params));
