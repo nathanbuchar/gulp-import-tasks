@@ -1,7 +1,7 @@
 gulp-import-tasks
 =================
 
-Imports gulp tasks from a local directory, rather than from your gulpfile.
+Imports Gulp tasks from a local directory, rather than from your gulpfile.
 
 Based on [gulp-load-tasks][external_gulp-load-tasks], but better (and actively maintained)!
 
@@ -26,7 +26,7 @@ Usage
 
 #### Quick Start
 
-Simply require the package within your `gulpfile.js`. By default, this will load all gulp tasks that exist within a local `tasks` directory.
+Simply require the package within your `gulpfile.js`. By default, this will load all Gulp tasks that exist within a local `tasks` directory.
 
 ```js
 // gulpfile.js
@@ -77,6 +77,21 @@ require('gulp-import-tasks')({
 ```
 
 
+#### Asynchronous Tasks
+
+Gulp will automatically send an asynchronous callback function as the last parameter in your task definition. Use this to make your task asynchronous! Read more about asynchronous tasks in the Gulp docs [here][external_gulp-async].
+
+```js
+// tasks/async.js
+
+module.exports = function (gulp, done) {
+  doSomethingAsync(() => {
+    done();
+  });
+};
+```
+
+
 Advanced
 --------
 
@@ -86,7 +101,7 @@ Using the options parameter, you may specify permissible file extensions, as wel
 
 | Option       | Type             | Description                                                          | Default   |
 |:-------------|:-----------------|:---------------------------------------------------------------------|:----------|
-| `dir`        | `string`         | The directory that contains your gulp tasks.                         | `tasks`   |
+| `dir`        | `string`         | The directory that contains your Gulp tasks.                         | `tasks`   |
 | `extensions` | `Array.<string>` | Only load files from the tasks directory that have these extensions. | `['.js']` |
 | `params`     | `Array.<any>`    | Additional parameters to pass into imported task.                    | `[]`      |
 
@@ -128,6 +143,17 @@ module.exports = function (gulp, config) {
 };
 ```
 
+```js
+// gulp/tasks/async.js
+
+module.exports = function (gulp, config, done) {
+  doSomethingAsync(() => {
+    done();
+  });
+};
+```
+
+
 
 Authors
 -------
@@ -148,4 +174,5 @@ MIT
 [section_advanced]: #advanced
 
 [external_gulp-load-tasks]: https://npmjs.com/package/gulp-load-tasks
+[external_gulp-async]: https://github.com/gulpjs/gulp/blob/master/docs/API.md#async-task-support
 [external_gulp]: https://npmjs.com/package/gulp
