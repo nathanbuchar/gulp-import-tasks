@@ -79,7 +79,7 @@ require('gulp-import-tasks')({
 
 #### Asynchronous Tasks
 
-Currently no support. Accepting pull requests.
+Not yet supported – accepting pull requests.
 
 
 Advanced
