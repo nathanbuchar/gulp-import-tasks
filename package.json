@@ -1,6 +1,6 @@
 {
   "name": "gulp-import-tasks",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Import tasks from a local directory, rather than from your gulpfile.",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "license": "MIT",
   "peerDependencies": {
     "gulp": "*"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
   }
 }
