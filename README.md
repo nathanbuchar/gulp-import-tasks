@@ -79,17 +79,7 @@ require('gulp-import-tasks')({
 
 #### Asynchronous Tasks
 
-Gulp will automatically send an asynchronous callback function as the last parameter in your task definition. Use this to make your task asynchronous! Read more about asynchronous tasks in the Gulp docs [here][external_gulp-async].
-
-```js
-// tasks/async.js
-
-module.exports = function (gulp, done) {
-  doSomethingAsync(() => {
-    done();
-  });
-};
-```
+Currently no support. Accepting pull requests.
 
 
 Advanced
@@ -140,16 +130,6 @@ const clean = require('gulp-clean');
 module.exports = function (gulp, config) {
   return gulp.clean(config.build, { read: false })
     .pipe(clean());
-};
-```
-
-```js
-// gulp/tasks/async.js
-
-module.exports = function (gulp, config, done) {
-  doSomethingAsync(() => {
-    done();
-  });
 };
 ```
 
