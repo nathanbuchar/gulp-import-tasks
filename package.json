@@ -22,7 +22,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "gulp": "<4"
+    "gulp": "*"
   },
   "dependencies": {
     "debug": "^2.2.0"
